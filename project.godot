@@ -10,18 +10,12 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
-"class": "El_Santo",
+"class": "State",
 "language": "GDScript",
-"path": "res://Scripts/ElSanto.gd"
-}, {
-"base": "El_Santo",
-"class": "Move",
-"language": "GDScript",
-"path": "res://Scripts/move_edit.gd"
+"path": "res://El Santo/State.gd"
 } ]
 _global_script_class_icons={
-"El_Santo": "",
-"Move": ""
+"State": ""
 }
 
 [application]
