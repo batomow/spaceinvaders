@@ -1,0 +1,39 @@
+extends State
+
+var timer: Timer = null 
+var direction := Vector2()
+var randirs = [Vector2.UP, Vector2.DOWN, Vector2.RIGHT, Vector2.LEFT]
+var sample: Array = [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] 
+export (float) var speed = 25
+
+func enter(): 
+	print("enemy evading")
+	sample.shuffle()
+	if not timer: 
+		var new_timer = Timer.new()
+		new_timer.wait_time = 2
+		new_timer.autostart = true
+		(target as Node).add_child(new_timer)
+		new_timer.connect("timeout", self, "_on_timeout")
+	else: 
+		timer.start()
+
+func evaluate(_delta): 
+	if Input.is_key_pressed(KEY_2): 
+		machine.next = machine.states['dead']
+
+
+func execute(delta): 
+	target.position += direction * delta * speed
+
+func _on_timeout(): 
+	var front = sample.front()
+	direction = randirs[front]
+	sample.pop_front()
+	sample.push_back(front)
+
+
+func exit(): 
+	if timer: 
+		timer.stop()
+
