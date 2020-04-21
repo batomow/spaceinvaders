@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Art/spaceshit-white.png" type="Texture" id=1]
+[ext_resource path="res://Art/spaceship-red.png" type="Texture" id=1]
 [ext_resource path="res://El Santo/State.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Move.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
