@@ -28,8 +28,13 @@ func evaluate(_delta):
 
 
 func execute(delta): 
-	target.position.x = clamp(target.position.x + direction.x * delta * speed, LIMIT_L, LIMIT_R)
-	target.position.y = clamp(target.position.y + direction.y * delta * speed, LIMIT_U, LIMIT_D)
+	if(target.position.x + direction.x * delta * speed) > LIMIT_R or (target.position.x + direction.x * delta * speed) < LIMIT_L:
+		direction.x = -direction.x
+	if(target.position.y + direction.y * delta * speed) > LIMIT_D or (target.position.y + direction.y * delta * speed) < LIMIT_U:
+		direction.y = -direction.y
+
+	target.position.x += direction.x * delta * speed
+	target.position.y += direction.y * delta * speed
 
 func _on_timeout(): 
 	var front = sample.front()

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spaceship-red.png-a2d9e709b5311fc05227aa0281648776.stex"
+path="res://.import/black-debug-tile.png-48afb9e9660c11be1094c8e7307114e8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spaceship-red.png"
-dest_files=[ "res://.import/spaceship-red.png-a2d9e709b5311fc05227aa0281648776.stex" ]
+source_file="res://Art/black-debug-tile.png"
+dest_files=[ "res://.import/black-debug-tile.png-48afb9e9660c11be1094c8e7307114e8.stex" ]
 
 [params]
 
