@@ -5,6 +5,10 @@ var direction := Vector2()
 var randirs = [Vector2.UP, Vector2.DOWN, Vector2.RIGHT, Vector2.LEFT]
 var sample: Array = [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] 
 export (float) var speed = 25
+const LIMIT_L = 16
+const LIMIT_R = 784
+const LIMIT_U = 16
+const LIMIT_D = 788
 
 func enter(): 
 	print("enemy evading")
@@ -24,7 +28,8 @@ func evaluate(_delta):
 
 
 func execute(delta): 
-	target.position += direction * delta * speed
+	target.position.x = clamp(target.position.x + direction.x * delta * speed, LIMIT_L, LIMIT_R)
+	target.position.y = clamp(target.position.y + direction.y * delta * speed, LIMIT_U, LIMIT_D)
 
 func _on_timeout(): 
 	var front = sample.front()
