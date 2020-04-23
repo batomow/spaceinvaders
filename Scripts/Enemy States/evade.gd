@@ -4,7 +4,7 @@ var timer: Timer = null
 var direction := Vector2()
 var randirs = [Vector2.UP, Vector2.DOWN, Vector2.RIGHT, Vector2.LEFT]
 var sample: Array = [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] 
-export (float) var speed = 25
+export (float) var speed = 100
 const LIMIT_L = 16
 const LIMIT_R = 784
 const LIMIT_U = 16
@@ -39,6 +39,7 @@ func execute(delta):
 func _on_timeout(): 
 	var front = sample.front()
 	direction = randirs[front]
+	target._queue_signal_move(target.position + direction*64)
 	sample.pop_front()
 	sample.push_back(front)
 
