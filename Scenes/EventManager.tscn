@@ -1,9 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node
-
-"
+[ext_resource path="res://Scripts/EventManager.gd" type="Script" id=1]
 
 [node name="EventManager" type="Node"]
-script = SubResource( 1 )
+script = ExtResource( 1 )

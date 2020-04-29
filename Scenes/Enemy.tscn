@@ -9,7 +9,9 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 15.8172
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" groups=[
+"enemies",
+]]
 position = Vector2( 116.343, 72.2878 )
 script = ExtResource( 5 )
 
