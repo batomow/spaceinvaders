@@ -15,9 +15,9 @@ _global_script_classes=[ {
 "path": "res://El Santo/EventConsumer.gd"
 }, {
 "base": "Position2D",
-"class": "LSC",
+"class": "Spawner",
 "language": "GDScript",
-"path": "res://El Santo/LoaderSpawnerContainer.gd"
+"path": "res://El Santo/Spawner.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -26,7 +26,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "EventConsumer": "",
-"LSC": "",
+"Spawner": "",
 "State": ""
 }
 
@@ -38,7 +38,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-EventManager="*res://Scenes/EventManager.tscn"
+EventManager="*res://El Santo/EventManager.gd"
 
 [display]
 
