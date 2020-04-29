@@ -65,7 +65,7 @@ script = ExtResource( 5 )
 [node name="dead" type="Node" parent="Entities/Player/Machine"]
 script = ExtResource( 6 )
 
-[node name="Enemies" type="Node" parent="Entities"]
+[node name="EnemiesContainer" type="Node" parent="Entities"]
 
-[node name="Enemy" parent="Entities/Enemies" instance=ExtResource( 7 )]
+[node name="Enemy" parent="Entities/EnemiesContainer" instance=ExtResource( 7 )]
 [connection signal="timeout" from="Background/TileMap/Timer" to="Background/TileMap" method="_on_Timer_timeout"]
