@@ -21,4 +21,10 @@ func _on_loaded_enemies()->void:
 	for enemy in enemies: 
 		if (enemy is Enemy):
 			enemy.grid = (self as TileMap)
-	
+
+func _pos_to_grid(position:Vector2)->Vector2: 
+	return Vector2(int(position.x/CELL_SIZE.x), int(position.y/CELL_SIZE.y))
+
+func _grid_to_pos(gridpos:Vector2)->Vector2: 
+	return gridpos * CELL_SIZE
+
