@@ -54,8 +54,7 @@ EVENTMANAGER="*res://El Santo/EventManager.gd"
 
 [display]
 
-window/size/width=896
-window/size/height=504
+window/size/height=640
 window/size/resizable=false
 window/size/borderless=true
 

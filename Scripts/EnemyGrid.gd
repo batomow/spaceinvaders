@@ -4,10 +4,8 @@ export (NodePath) var enemy_spawner_path:NodePath
 export (NodePath) var enemy_cointainer_path:NodePath
 var enemy_container: Node
 var enemies: Array 
-
-const HEIGHT = 720
-const WIDTH = 800
-const CELL_SIZE = Vector2(64, 64)
+export (Vector2) var offset
+var enemy_validation_queue = [] 
 
 func _ready():
 	enemy_container = get_node(enemy_cointainer_path)
@@ -22,9 +20,16 @@ func _on_loaded_enemies()->void:
 		if (enemy is Enemy):
 			enemy.grid = (self as TileMap)
 
-func _pos_to_grid(position:Vector2)->Vector2: 
-	return Vector2(int(position.x/CELL_SIZE.x), int(position.y/CELL_SIZE.y))
+func validate_position(position:Vector2)->bool:
+	var gridpos = (self as TileMap).world_to_map(position-offset)
+	if get_cellv(gridpos) == 0: 
+		(self as TileMap).set_cellv(gridpos-offset, 1)
+		return true
+	return false 
 
-func _grid_to_pos(gridpos:Vector2)->Vector2: 
-	return gridpos * CELL_SIZE
+func _validate_position(_position: Vector2)->bool: #needs to do callback, change yield on Enemy:evade.gd 
+	return false
 
+func free_cell(position:Vector2):
+	var gridpos = (self as TileMap).world_to_map(position-offset)
+	(self as TileMap).set_cellv(gridpos-offset, 0)
