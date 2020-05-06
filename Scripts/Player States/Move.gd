@@ -2,10 +2,10 @@ extends "res://El Santo/State.gd"
 
 var direction := Vector2()
 export (float) var speed
-const LIMIT_L = 16
+const LIMIT_L = 32
 const LIMIT_R = 784
-const LIMIT_U = 16
-const LIMIT_D = 788
+const LIMIT_U = 32
+const LIMIT_D = 736
 
 func enter(): 
 	print("moving")
