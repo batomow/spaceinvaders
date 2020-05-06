@@ -9,13 +9,37 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Scripts/Enemy.gd"
+}, {
+"base": "Node",
+"class": "EventConsumer",
+"language": "GDScript",
+"path": "res://El Santo/EventConsumer.gd"
+}, {
+"base": "Node",
+"class": "EventManager",
+"language": "GDScript",
+"path": "res://El Santo/EventManager.gd"
+}, {
+"base": "Position2D",
+"class": "Spawner",
+"language": "GDScript",
+"path": "res://El Santo/Spawner.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
 "path": "res://El Santo/State.gd"
 } ]
 _global_script_class_icons={
-"State": ""
+"Enemy": "",
+"EventConsumer": "res://icons/EventConsumer.svg",
+"EventManager": "res://icons/EventManager.svg",
+"Spawner": "res://icons/Spawner.svg",
+"State": "res://icons/State.svg"
 }
 
 [application]
@@ -24,10 +48,14 @@ config/name="space invaders"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+EVENTMANAGER="*res://El Santo/EventManager.gd"
+
 [display]
 
-window/size/width=896
-window/size/height=504
+window/size/width=820
+window/size/height=768
 window/size/resizable=false
 window/size/borderless=true
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spaceshit-white.png-031ed90639de2eefdb009d6836bc1e9c.stex"
+path="res://.import/bullet.png-bc73bacce7c99726b792e68f7bd63464.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/spaceshit-white.png"
-dest_files=[ "res://.import/spaceshit-white.png-031ed90639de2eefdb009d6836bc1e9c.stex" ]
+source_file="res://Art/bullet.png"
+dest_files=[ "res://.import/bullet.png-bc73bacce7c99726b792e68f7bd63464.stex" ]
 
 [params]
 
