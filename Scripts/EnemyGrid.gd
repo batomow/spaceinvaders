@@ -20,15 +20,27 @@ func _on_loaded_enemies()->void:
 		if (enemy is Enemy):
 			enemy.grid = (self as TileMap)
 
-func validate_position(position:Vector2)->bool:
+func _process(delta):
+	if enemy_validation_queue: 
+		var front = enemy_validation_queue.pop_front()
+		var result = _validate_position(front.position)
+		front.requester.call(front.method, result, front.position)
+
+func request_validation(requester:Object, method:String, position:Vector2):
+	var new_request = {
+		"requester": requester, 
+		"method": method,
+		"position": position
+	}
+	enemy_validation_queue.push_back(new_request)
+
+func _validate_position(position:Vector2)->bool:
 	var gridpos = (self as TileMap).world_to_map(position-offset)
 	if get_cellv(gridpos) == 0: 
+		print(get_cellv(gridpos))
 		(self as TileMap).set_cellv(gridpos-offset, 1)
 		return true
 	return false 
-
-func _validate_position(_position: Vector2)->bool: #needs to do callback, change yield on Enemy:evade.gd 
-	return false
 
 func free_cell(position:Vector2):
 	var gridpos = (self as TileMap).world_to_map(position-offset)
