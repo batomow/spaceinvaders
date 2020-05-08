@@ -19,6 +19,7 @@ script = ExtResource( 5 )
 
 [node name="EventConsumer" type="Node" parent="."]
 script = ExtResource( 7 )
+event_manager = NodePath("")
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )

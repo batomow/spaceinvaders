@@ -2,6 +2,7 @@ extends State
 
 var tween: Tween = null 
 var direction := Vector2()
+var future_position := Vector2()
 var move_record := [] 
 var randirs = [Vector2.UP, Vector2.DOWN, Vector2.RIGHT, Vector2.LEFT, Vector2.ZERO]
 var sample: Array = [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] 
@@ -13,28 +14,24 @@ func enter():
 	if not tween: 
 		var new_tween = Tween.new()
 		(target as Node).add_child(new_tween)
-		new_tween.connect("tween_all_completed", self, "_on_complete")
+		new_tween.connect("tween_all_completed", self, "_get_new_position")
 		tween = new_tween
-	_on_complete()
+	_get_new_position()
 
-func evaluate(_delta): 
-	if Input.is_key_pressed(KEY_2): 
-		machine.next = machine.states['dead']
 
-func _on_complete(): 
+func _get_new_position(): 
 	var front = sample.pop_front()
 	direction = randirs[front]
 	sample.push_back(front)
-	var future_position  = target.position + direction * target.grid.cell_size
-	target.grid.request_validation(self, "_on_validated", future_position)
-		
-func _on_validated(result:bool, future_position:Vector2):
-	if result == false: 
-		_on_complete()
-	else: 
-		tween.interpolate_property(target, "position", target.position, future_position, 1, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
-		tween.start()
-		if move_record.size() > 1: 
-			var element = move_record.pop_front()
-			target.grid.free_cell(element)
-		move_record.push_back(future_position)
+	future_position  = target.position + direction * target.get_cell_size.call_func()  # dependency x 2
+	target.validate_position.call_func(funcref(self, "_on_validated"), future_position)
+
+func _on_validated(result:bool):
+	if result == false:  # guard
+		return _get_new_position()
+	tween.interpolate_property(target, "position", target.position, future_position, 1, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.start()
+	if move_record.size() > 1: 
+		var element = move_record.pop_front()
+		target.free_cell.call_func(element) # dependency
+	move_record.push_back(future_position)

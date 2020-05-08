@@ -24,6 +24,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://El Santo/EventManager.gd"
 }, {
+"base": "Node",
+"class": "ServiceManager",
+"language": "GDScript",
+"path": "res://El Santo/ServiceManager.gd"
+}, {
+"base": "Node",
+"class": "ServiceProvider",
+"language": "GDScript",
+"path": "res://El Santo/ServiceProvider.gd"
+}, {
 "base": "Position2D",
 "class": "Spawner",
 "language": "GDScript",
@@ -38,6 +48,8 @@ _global_script_class_icons={
 "Enemy": "",
 "EventConsumer": "res://icons/EventConsumer.svg",
 "EventManager": "res://icons/EventManager.svg",
+"ServiceManager": "res://icons/ServiceManager.svg",
+"ServiceProvider": "res://icons/ServiceProvider.svg",
 "Spawner": "res://icons/Spawner.svg",
 "State": "res://icons/State.svg"
 }
@@ -46,11 +58,12 @@ _global_script_class_icons={
 
 config/name="space invaders"
 run/main_scene="res://Scenes/Main.tscn"
-config/icon="res://icon.png"
+config/icon="res://icons/icon.png"
 
 [autoload]
 
 EVENTMANAGER="*res://El Santo/EventManager.gd"
+SERVICEMANAGER="*res://El Santo/ServiceManager.gd"
 
 [display]
 
