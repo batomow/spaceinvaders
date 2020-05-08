@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://Scripts/Enemy.gd"
+"path": "res://Scripts/Enemy/Enemy.gd"
 }, {
 "base": "Node",
 "class": "EventConsumer",
@@ -67,7 +67,7 @@ SERVICEMANAGER="*res://El Santo/ServiceManager.gd"
 
 [display]
 
-window/size/width=820
+window/size/width=832
 window/size/height=768
 window/size/resizable=false
 window/size/borderless=true

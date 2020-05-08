@@ -3,7 +3,7 @@ extends "res://El Santo/State.gd"
 var direction := Vector2()
 export (float) var speed
 const LIMIT_L = 32
-const LIMIT_R = 784
+const LIMIT_R = 800
 const LIMIT_U = 32
 const LIMIT_D = 736
 
