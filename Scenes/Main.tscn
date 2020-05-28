@@ -49,7 +49,6 @@ container_path = NodePath("../../../Main/Entities/EnemyContainer")
 
 [node name="EventConsumer" type="Node" parent="Gizmos/EnemySpawner"]
 script = ExtResource( 10 )
-event_manager = NodePath("")
 
 [node name="Spawner" type="Position2D" parent="Gizmos/EnemySpawner"]
 position = Vector2( 352, 96 )
@@ -122,4 +121,3 @@ script = ExtResource( 14 )
 
 [node name="EventConsumer" type="Node" parent="Entities/EnemyContainer"]
 script = ExtResource( 10 )
-event_manager = NodePath("")
