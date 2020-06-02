@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://El Santo/Spawner.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tests/Spawner.gd" type="Script" id=3]
+[ext_resource path="res://Tests/Bullets.gd" type="Script" id=4]
+
+[node name="Main" type="Node"]
+
+[node name="Spawner" type="Position2D" parent="."]
+script = ExtResource( 3 )
+is_root = true
+scene = ExtResource( 2 )
+container_path = NodePath("../Bullets")
+
+[node name="Spawner" type="Position2D" parent="Spawner"]
+position = Vector2( 64, 32 )
+script = ExtResource( 1 )
+
+[node name="Spawner2" type="Position2D" parent="Spawner"]
+position = Vector2( 128, 32 )
+script = ExtResource( 1 )
+
+[node name="Bullets" type="Node" parent="."]
+script = ExtResource( 4 )

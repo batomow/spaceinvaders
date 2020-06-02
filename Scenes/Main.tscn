@@ -45,6 +45,8 @@ script = ExtResource( 13 )
 
 [node name="EnemySpawner" type="Position2D" parent="Gizmos"]
 script = ExtResource( 11 )
+is_root = true
+scene = ExtResource( 12 )
 container_path = NodePath("../../../Main/Entities/EnemyContainer")
 
 [node name="EventConsumer" type="Node" parent="Gizmos/EnemySpawner"]
