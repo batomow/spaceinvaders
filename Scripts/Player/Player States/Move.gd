@@ -1,4 +1,4 @@
-extends "res://El Santo/State.gd"
+extends "res://El-Santo/State.gd"
 
 var direction := Vector2()
 export (float) var speed

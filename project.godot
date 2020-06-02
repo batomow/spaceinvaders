@@ -17,41 +17,41 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "EventConsumer",
 "language": "GDScript",
-"path": "res://El Santo/EventConsumer.gd"
+"path": "res://El-Santo/EventConsumer.gd"
 }, {
 "base": "Node",
 "class": "EventManager",
 "language": "GDScript",
-"path": "res://El Santo/EventManager.gd"
+"path": "res://El-Santo/EventManager.gd"
 }, {
 "base": "Node",
 "class": "ServiceManager",
 "language": "GDScript",
-"path": "res://El Santo/ServiceManager.gd"
+"path": "res://El-Santo/ServiceManager.gd"
 }, {
 "base": "Node",
 "class": "ServiceProvider",
 "language": "GDScript",
-"path": "res://El Santo/ServiceProvider.gd"
+"path": "res://El-Santo/ServiceProvider.gd"
 }, {
 "base": "Position2D",
 "class": "Spawner",
 "language": "GDScript",
-"path": "res://El Santo/Spawner.gd"
+"path": "res://El-Santo/Spawner.gd"
 }, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
-"path": "res://El Santo/State.gd"
+"path": "res://El-Santo/State.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
-"EventConsumer": "res://icons/EventConsumer.svg",
-"EventManager": "res://icons/EventManager.svg",
+"EventConsumer": "res://El-Santo/icons/EventConsumer.svg",
+"EventManager": "res://El-Santo/icons/EventManager.svg",
 "ServiceManager": "res://icons/ServiceManager.svg",
-"ServiceProvider": "res://icons/ServiceProvider.svg",
-"Spawner": "res://icons/Spawner.svg",
-"State": "res://icons/State.svg"
+"ServiceProvider": "res://El-Santo/icons/ServiceProvider.svg",
+"Spawner": "res://El-Santo/icons/Spawner.svg",
+"State": "res://El-Santo/icons/State.svg"
 }
 
 [application]
@@ -62,8 +62,8 @@ config/icon="res://icons/icon.png"
 
 [autoload]
 
-EVENTMANAGER="*res://El Santo/EventManager.gd"
-SERVICEMANAGER="*res://El Santo/ServiceManager.gd"
+SERVICEMANAGER="*res://El-Santo/ServiceManager.gd"
+EVENTMANAGER="*res://El-Santo/EventManager.gd"
 
 [display]
 
